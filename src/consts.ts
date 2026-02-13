@@ -1,5 +1,9 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+export const SITE_TITLE = {
+  pt: 'LABORA - FGV EMAp',
+  en: 'LABORA - FGV EMAp',
+} as const
 
-export const SITE_TITLE = 'Astro Blog';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_DESCRIPTION = {
+  pt: 'Laboratório de Inteligência Artificial, Biomodelagem e Análise de Resposta a Surtos',
+  en: 'Laboratory of Artificial Intelligence, Biomodeling, and Outbreak Response Analysis',
+} as const
