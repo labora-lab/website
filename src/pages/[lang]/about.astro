@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_TITLE } from '../../consts';
+import type { Lang } from '../../i18n/translations';
+
+export function getStaticPaths() {
+	return [
+		{ params: { lang: 'pt' } },
+		{ params: { lang: 'en' } },
+	];
+}
+
+const { lang } = Astro.params as { lang: Lang };
+
+if (lang !== 'pt' && lang !== 'en') {
+	return Astro.redirect('/pt/about');
+}
+
+const pageTitle = lang === 'pt' ? 'Sobre o LABORA' : 'About LABORA';
+const title = `${pageTitle} - ${SITE_TITLE[lang]}`;
+const description = lang === 'pt' ? 'Sobre o LABORA' : 'About LABORA';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+	<!-- Hero Section -->
+	<div class="bg-linear-to-r from-blue-600 to-blue-800 text-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+			<div class="text-center">
+				<h1 class="text-4xl sm:text-5xl font-bold mb-4">{pageTitle}</h1>
+				<p class="text-xl text-blue-100 max-w-3xl mx-auto">
+					{
+						lang === 'pt'
+							? 'Laboratório de Inteligência Artificial, Biomodelagem e Análise de Resposta a Surtos'
+							: 'Laboratory of Artificial Intelligence, Biomodeling, and Outbreak Response Analysis'
+					}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Mission Section -->
+	<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+		<div class="max-w-4xl mx-auto">
+			<div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+				<div class="flex items-center mb-6">
+					<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+						<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+						</svg>
+					</div>
+					<h2 class="text-3xl font-bold text-gray-900">
+						{lang === 'pt' ? 'Nossa Missão' : 'Our Mission'}
+					</h2>
+				</div>
+				<p class="text-lg text-gray-700 leading-relaxed">
+					{
+						lang === 'pt'
+							? 'O LABORA é um laboratório de pesquisa da FGV EMAp dedicado ao avanço da ciência em inteligência artificial, biomodelagem matemática e análise de resposta a surtos epidemiológicos. Nosso objetivo é desenvolver soluções inovadoras que contribuam para a saúde pública e o bem-estar da sociedade através de pesquisa de ponta e aplicação prática de tecnologias emergentes.'
+							: 'LABORA is a research laboratory at FGV EMAp dedicated to advancing science in artificial intelligence, mathematical biomodeling, and outbreak response analysis. Our goal is to develop innovative solutions that contribute to public health and societal well-being through cutting-edge research and practical application of emerging technologies.'
+					}
+				</p>
+			</div>
+
+			<!-- Research Areas -->
+			<div class="mb-12">
+				<h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+					{lang === 'pt' ? 'Áreas de Pesquisa' : 'Research Areas'}
+				</h2>
+				<div class="grid md:grid-cols-2 gap-6">
+					<!-- AI in Public Health -->
+					<div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
+						<div class="flex items-start">
+							<div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0 mr-4">
+								<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+									></path>
+								</svg>
+							</div>
+							<div>
+								<h3 class="text-xl font-semibold text-gray-900 mb-2">
+									{
+										lang === 'pt'
+											? 'Inteligência Artificial aplicada à Saúde Pública'
+											: 'Artificial Intelligence applied to Public Health'
+									}
+								</h3>
+								<p class="text-gray-600">
+									{
+										lang === 'pt'
+											? 'Desenvolvimento de algoritmos e modelos de IA para análise preditiva e suporte à tomada de decisões em saúde.'
+											: 'Development of AI algorithms and models for predictive analysis and decision support in health.'
+									}
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Mathematical Modeling -->
+					<div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
+						<div class="flex items-start">
+							<div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0 mr-4">
+								<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+									></path>
+								</svg>
+							</div>
+							<div>
+								<h3 class="text-xl font-semibold text-gray-900 mb-2">
+									{
+										lang === 'pt'
+											? 'Modelagem Matemática de Doenças Infecciosas'
+											: 'Mathematical Modeling of Infectious Diseases'
+									}
+								</h3>
+								<p class="text-gray-600">
+									{
+										lang === 'pt'
+											? 'Criação de modelos computacionais para simular a dinâmica de propagação de doenças infecciosas.'
+											: 'Creation of computational models to simulate the dynamics of infectious disease spread.'
+									}
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Data Analysis -->
+					<div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
+						<div class="flex items-start">
+							<div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center shrink-0 mr-4">
+								<svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+									></path>
+								</svg>
+							</div>
+							<div>
+								<h3 class="text-xl font-semibold text-gray-900 mb-2">
+									{
+										lang === 'pt'
+											? 'Análise de Dados Epidemiológicos'
+											: 'Epidemiological Data Analysis'
+									}
+								</h3>
+								<p class="text-gray-600">
+									{
+										lang === 'pt'
+											? 'Processamento e análise de grandes volumes de dados epidemiológicos para identificação de padrões e tendências.'
+											: 'Processing and analysis of large volumes of epidemiological data to identify patterns and trends.'
+									}
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Health Surveillance -->
+					<div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
+						<div class="flex items-start">
+							<div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center shrink-0 mr-4">
+								<svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+									></path>
+								</svg>
+							</div>
+							<div>
+								<h3 class="text-xl font-semibold text-gray-900 mb-2">
+									{
+										lang === 'pt'
+											? 'Sistemas de Vigilância em Saúde'
+											: 'Health Surveillance Systems'
+									}
+								</h3>
+								<p class="text-gray-600">
+									{
+										lang === 'pt'
+											? 'Desenvolvimento de sistemas de monitoramento em tempo real para detecção precoce de surtos epidemiológicos.'
+											: 'Development of real-time monitoring systems for early detection of epidemiological outbreaks.'
+									}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Contact/CTA Section -->
+			<div class="bg-linear-to-r from-blue-50 to-blue-100 rounded-lg p-8 text-center">
+				<h2 class="text-2xl font-bold text-gray-900 mb-4">
+					{lang === 'pt' ? 'Interessado em colaborar?' : 'Interested in collaborating?'}
+				</h2>
+				<p class="text-gray-700 mb-6">
+					{
+						lang === 'pt'
+							? 'Estamos sempre abertos a parcerias acadêmicas e colaborações em pesquisa.'
+							: 'We are always open to academic partnerships and research collaborations.'
+					}
+				</p>
+				<a
+					href={`/${lang}/blog`}
+					class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+				>
+					{lang === 'pt' ? 'Veja nossas publicações' : 'View our publications'}
+				</a>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
