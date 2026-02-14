@@ -1,6 +1,0 @@
----
-const browserLang = Astro.request.headers.get('accept-language');
-const defaultLang = browserLang?.includes('pt') ? 'pt' : 'en';
-
-return Astro.redirect(`/${defaultLang}`);
----
