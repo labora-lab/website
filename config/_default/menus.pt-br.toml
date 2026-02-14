@@ -1,0 +1,36 @@
+# Main Menu - Portuguese
+[[main]]
+  identifier = "home"
+  name = "Início"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  identifier = "about"
+  name = "Sobre"
+  pageRef = "/about"
+  weight = 20
+
+[[main]]
+  identifier = "people"
+  name = "Pesquisadores"
+  pageRef = "/people"
+  weight = 30
+
+[[main]]
+  identifier = "programs"
+  name = "Programas"
+  pageRef = "/programs"
+  weight = 40
+
+[[main]]
+  identifier = "news"
+  name = "Notícias"
+  pageRef = "/news"
+  weight = 50
+
+[[main]]
+  identifier = "publications"
+  name = "Publicações"
+  pageRef = "/publications"
+  weight = 60

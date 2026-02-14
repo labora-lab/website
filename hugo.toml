@@ -1,3 +1,37 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://labora.fgv.br/'
+defaultContentLanguage = 'pt-br'
+defaultContentLanguageInSubdir = true
+title = 'LABORA - FGV EMAp'
+theme = 'blowfish'
+
+[languages]
+  [languages.pt-br]
+    languageCode = 'pt-BR'
+    languageDirection = 'ltr'
+    languageName = 'Português'
+    title = 'LABORA - FGV EMAp'
+    weight = 1
+    contentDir = 'content/pt-br'
+    [languages.pt-br.params]
+      description = 'Laboratório de Inteligência Artificial, Biomodelagem e Análise de Resposta a Surtos'
+      displayName = 'PT'
+
+  [languages.en]
+    languageCode = 'en-US'
+    languageDirection = 'ltr'
+    languageName = 'English'
+    title = 'LABORA - FGV EMAp'
+    weight = 2
+    contentDir = 'content/en'
+    [languages.en.params]
+      description = 'Laboratory of Artificial Intelligence, Biomodeling, and Outbreak Response Analysis'
+      displayName = 'EN'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Output formats
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']

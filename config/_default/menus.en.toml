@@ -1,0 +1,36 @@
+# Main Menu - English
+[[main]]
+  identifier = "home"
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  identifier = "about"
+  name = "About"
+  pageRef = "/about"
+  weight = 20
+
+[[main]]
+  identifier = "people"
+  name = "People"
+  pageRef = "/people"
+  weight = 30
+
+[[main]]
+  identifier = "programs"
+  name = "Programs"
+  pageRef = "/programs"
+  weight = 40
+
+[[main]]
+  identifier = "news"
+  name = "News"
+  pageRef = "/news"
+  weight = 50
+
+[[main]]
+  identifier = "publications"
+  name = "Publications"
+  pageRef = "/publications"
+  weight = 60

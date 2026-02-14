@@ -1,0 +1,69 @@
+# Blowfish Theme Configuration for LABORA
+
+# Appearance
+colorScheme = "slate"  # Professional academic look
+defaultAppearance = "light"
+autoSwitchAppearance = true
+
+# Features
+enableSearch = true
+enableCodeCopy = true
+mainSections = ["news", "publications"]
+
+# Homepage
+[homepage]
+  layout = "custom"  # Using our custom layout
+  showRecent = true
+  recentLimit = 5
+
+# Article settings
+[article]
+  showDate = true
+  showDateUpdated = false
+  showAuthor = false  # Hide author in articles for lab context
+  showBreadcrumbs = true
+  showDraftLabel = true
+  showEdit = false
+  showHeadingAnchors = true
+  showPagination = true
+  invertPagination = false
+  showReadingTime = true
+  showTableOfContents = true
+  showTaxonomies = true
+  showWordCount = false
+  showComments = false
+  sharingLinks = ["linkedin", "twitter", "email"]
+  showHero = false
+  heroStyle = "basic"
+
+# List settings
+[list]
+  showBreadcrumbs = true
+  showSummary = true
+  showTableOfContents = false
+  showCards = true  # Show as cards for better visual
+  groupByYear = true
+  cardView = false
+  cardViewScreenWidth = false
+
+# Sitemap
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Taxonomy
+[taxonomy]
+  showTermCount = true
+  showBreadcrumbs = true
+
+# Header & Footer
+[header]
+  layout = "basic"
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
